@@ -1,0 +1,3 @@
+sushi 5.0
+musubi 4.0
+tempura 4.5
