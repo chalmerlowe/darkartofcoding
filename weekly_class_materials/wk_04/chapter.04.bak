@@ -1,0 +1,1351 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1>Welcome to the Dark Art of Coding:</h1>\n",
+    "<h2>Introduction to Python</h2>\n",
+    "Chapter 04: Lists"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1>Today's class</h1>\n",
+    "<ul>\n",
+    "<li><strong>Review and Questions?</strong></li>\n",
+    "<li><strong>Objectives:</strong></li>\n",
+    "<ul>\n",
+    "    <li><strong>What is a list?</strong></li>\n",
+    "    <li><strong>Using lists</strong></li>\n",
+    "    <li><strong>Augmented Assignment</strong></li>\n",
+    "    <li><strong>Using and understanding methods</strong></li>\n",
+    "</ul>\n",
+    "<li><strong>In-class Practice</strong></li>\n",
+    "</ul>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1>Review and Questions?</h1>\n",
+    "<ul>\n",
+    "<li><strong>Boolean values: True, False</strong></li>\n",
+    "<li><strong>Comparison and Boolean operators: >, =, >=, !=, and, or, not</strong></li>\n",
+    "<li><strong>Flow controls: if, elif, else, for, while, break, continue</strong></li>\n",
+    "<li><strong>imports and importing modules</strong></li>\n",
+    "</ul>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1>Today's class</h1>\n",
+    "<ul>\n",
+    "<li><strong>Review and Questions?</strong></li>\n",
+    "<li><strong>Objectives:</strong></li>\n",
+    "<ul>\n",
+    "    <li><strong>What is a function?</strong></li>\n",
+    "    <li><strong>Returning values</strong></li>\n",
+    "    <li><strong>Keyword arguments</strong></li>\n",
+    "    <li><strong>Global and local scope</strong></li>\n",
+    "    <li><strong>Exception handling</strong></li>\n",
+    "</ul>\n",
+    "<li><strong>In-class Practice</strong></li>\n",
+    "</ul>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1>What is a function?</h1>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 100,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "aquaman\n",
+      "robin\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman')\n",
+    "print('aquaman')\n",
+    "print('robin')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 101,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "aquaman\n",
+      "robin\n",
+      "batman\n",
+      "aquaman\n",
+      "robin\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman')\n",
+    "print('aquaman')\n",
+    "print('robin')\n",
+    "print('batman')\n",
+    "print('aquaman')\n",
+    "print('robin')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<img src='invisible_output_function_black_box.png'>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<img src='no_input_function_black_box.png'>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<img src='function_black_box.png'>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 102,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "aquaman\n",
+      "robin\n"
+     ]
+    }
+   ],
+   "source": [
+    "def heroes():\n",
+    "    print('batman')\n",
+    "    print('aquaman')\n",
+    "    print('robin')\n",
+    "\n",
+    "    \n",
+    "# --------------------------------------    \n",
+    "    \n",
+    "heroes()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 103,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "aquaman\n",
+      "robin\n",
+      "batman\n",
+      "aquaman\n",
+      "robin\n"
+     ]
+    }
+   ],
+   "source": [
+    "# if I want to do this twice... I just call the function twice...\n",
+    "heroes()\n",
+    "heroes()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1><font color='red'>XP Grind!<font></h1>\n",
+    "<h2>Create three functions. Simply use print statements inside the functions, for now...</h2>\n",
+    "<ul>\n",
+    "<li><strong>First Function:</strong> call it food and print out your favorite food</li>\n",
+    "<li><strong>Second Function:</strong> call it friends and print out two of your friend's names</li>\n",
+    "<li><strong>Third Function:</strong> call it teams and print out three of your favorite sport's teams</li>\n",
+    "</ul>\n",
+    "<h2>Call each of your functions to ensure that they work</h2>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 104,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "help batman!\n",
+      "help wonder woman!\n"
+     ]
+    }
+   ],
+   "source": [
+    "# I can provide inputs to the function\n",
+    "\n",
+    "def hero_call(name):\n",
+    "    print('help ' + name + '!')\n",
+    "\n",
+    "# --------------------------------------    \n",
+    "    \n",
+    "hero_call('batman')\n",
+    "hero_call('wonder woman')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 105,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The label output is associated with this phrase: help me, aquaman!\n"
+     ]
+    }
+   ],
+   "source": [
+    "def findHero(name):\n",
+    "    phrase = 'help me, ' + name + '!'\n",
+    "    return phrase\n",
+    "\n",
+    "output = findHero('aquaman')\n",
+    "\n",
+    "print('The label output is associated with this phrase:', output) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman rocks!\n"
+     ]
+    }
+   ],
+   "source": [
+    "def findHero(name):\n",
+    "    if name == 'batman':\n",
+    "        return 'batman rocks!'\n",
+    "    \n",
+    "output = findHero('batman')\n",
+    "print(output)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 107,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'the captain is also know as shazam'"
+      ]
+     },
+     "execution_count": 107,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "def findHero(name):\n",
+    "    if name == 'batman':\n",
+    "        return \"batman's batmobile rocks\"\n",
+    "    elif name == 'wonder woman':\n",
+    "        return 'princess diana flies an invisible plane'\n",
+    "    elif name == 'aquaman':\n",
+    "        return \"topo is aquaman's sidekick\"\n",
+    "    elif name == 'flash':\n",
+    "        return 'flash is always running behind'\n",
+    "    elif name == 'green lantern':\n",
+    "        return 'the ring chose the green lantern'\n",
+    "    elif name == 'superman':\n",
+    "        return \"superman's weakness is krypton\"\n",
+    "    elif name == 'captain marvel':\n",
+    "        return 'the captain is also know as shazam'\n",
+    "    \n",
+    "findHero('captain marvel')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 108,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"batman's batmobile rocks\""
+      ]
+     },
+     "execution_count": 108,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "findHero('batman')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 109,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'flash is always running behind'"
+      ]
+     },
+     "execution_count": 109,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "findHero('flash')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 110,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"topo is aquaman's sidekick\""
+      ]
+     },
+     "execution_count": 110,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "findHero('aquaman')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1><font color='red'>XP Grind!<font></h1>\n",
+    "<h2>Create three new functions. Supply a parameter to your functions. Use print statements inside the functions, for now...</h2>\n",
+    "<ul>\n",
+    "<li><strong>First Function:</strong> call it animal, provide an animal as a parameter and print out the animal</li>\n",
+    "<li><strong>Second Function:</strong> call it car, provide a car as your parameter and print two statements, each of which uses the car</li>\n",
+    "<li><strong>Third Function:</strong> call it movie, provide a movie name as your parameter and print three statements, each of which uses the movie name</li>\n",
+    "</ul>\n",
+    "<h2>Call each of your functions to ensure that they work</h2>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 111,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "aquaman\n",
+      "robin\n",
+      "The returned value is: None\n"
+     ]
+    }
+   ],
+   "source": [
+    "# as we noted... all functions return a value, whether they look like it or not\n",
+    "# going back to our early function heroes()\n",
+    "\n",
+    "returned_value = heroes()\n",
+    "print('The returned value is:', returned_value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 112,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Batman, the dark knight\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 112,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# every function returns a value, even something like print\n",
+    "r_value = print('Batman, the dark knight')\n",
+    "r_value == None"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 113,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "princess diana\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman')                    # print('batman', end='\\n')\n",
+    "print('princess diana')            # print('princess diana', end='\\n')\n",
+    "\n",
+    "# the magic of keyword arguments is that you don't have to provide input data\n",
+    "# UNLESS you want to!\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batmanprincess diana\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman', end='')     \n",
+    "print('princess diana')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 115,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman...princess diana\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman', end='...')\n",
+    "print('princess diana')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 116,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman princess diana\n",
+      "this ends up on a new line"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman', end=' ')\n",
+    "print('princess diana', end='\\nthis ends up on a new line')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 117,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Help on built-in function print in module builtins:\n",
+      "\n",
+      "print(...)\n",
+      "    print(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n",
+      "    \n",
+      "    Prints the values to a stream, or to sys.stdout by default.\n",
+      "    Optional keyword arguments:\n",
+      "    file:  a file-like object (stream); defaults to the current sys.stdout.\n",
+      "    sep:   string inserted between values, default a space.\n",
+      "    end:   string appended after the last value, default a newline.\n",
+      "    flush: whether to forcibly flush the stream.\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "help(print)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 118,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman, flash, green lantern\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('batman', 'flash', 'green lantern', sep=', ')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 119,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Batman's strength is high and he uses a batarang\n"
+     ]
+    }
+   ],
+   "source": [
+    "def batman_attack(strength, weapon='batarang'):\n",
+    "    print(\"Batman's strength is\", strength, 'and he uses a', weapon)\n",
+    "    \n",
+    "batman_attack('high')\n",
+    "\n",
+    "# notice, I didn't have to include a weapon..."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1><font color='red'>XP Grind!<font></h1>\n",
+    "<h2>Create a new function. </h2>\n",
+    "<h3> Supply two parameters to your function.<br> Use print statements inside the function, for now.<br></h3>\n",
+    "<ul>\n",
+    "<li><strong>First Function:</strong> call it character, provide a name and character class and print them both out</li>\n",
+    "</ul>\n",
+    "<h2>Call your function to ensure that it works</h2>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 120,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Your character is: Kira and she is a sorceress\n"
+     ]
+    }
+   ],
+   "source": [
+    "def character(name, character_class):\n",
+    "    print('Your character is:', name, 'and she is a', character_class)\n",
+    "    \n",
+    "character('Kira', 'sorceress')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<h1><font color='red'>XP Grind!<font></h1>\n",
+    "<h2>Create a new function. </h2>\n",
+    "<h3> Supply two parameters to your function.<br>\n",
+    "Use the len() function to find the length of each parameter.<br>\n",
+    "Create a string called 'output', that tells the length of each word. (hint: len returns integers, but we need strings...)<br>\n",
+    "Return the string.<br></h3>\n",
+    "\n",
+    "<h2>Call your function to ensure that it works and print the result.</h2>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 121,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Kira: 4 sorceress: 9\n"
+     ]
+    }
+   ],
+   "source": [
+    "def character(name, character_class):\n",
+    "    name_len = len(name)\n",
+    "    name_len_int = str(name_len)\n",
+    "    class_len = str(len(character_class))\n",
+    "    \n",
+    "    output = name + ': ' + name_len_int + ' ' + character_class + ': ' + class_len\n",
+    "    return output    \n",
+    "\n",
+    "phrase = character('Kira', 'sorceress')\n",
+    "\n",
+    "print(phrase)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 122,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "batman\n",
+      "superman\n"
+     ]
+    }
+   ],
+   "source": [
+    "hero = 'superman'\n",
+    "\n",
+    "def hero_action():\n",
+    "    hero = 'batman'\n",
+    "    print(hero)\n",
+    "    \n",
+    "# --------------------------------------\n",
+    "\n",
+    "hero_action()         # remember, this prints the local variable\n",
+    "print(hero)           # this prints the global"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 123,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "wonder woman\n",
+      "batman\n",
+      "superman\n"
+     ]
+    }
+   ],
+   "source": [
+    "hero = 'superman'\n",
+    "\n",
+    "def heroine_action():\n",
+    "    hero = 'wonder woman'\n",
+    "    print(hero)\n",
+    "\n",
+    "def hero_action():\n",
+    "    heroine_action()         # nested function calls...\n",
+    "    hero = 'batman'\n",
+    "    print(hero)\n",
+    "    \n",
+    "# --------------------------------------\n",
+    "\n",
+    "\n",
+    "hero_action()         # note, this calls another function internally, first...\n",
+    "print(hero)           # this prints the global"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 124,
+   "metadata": {
+    "collapsed": false,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "wonder woman\n",
+      "batman\n",
+      "wonder woman\n"
+     ]
+    }
+   ],
+   "source": [
+    "hero = 'superman'\n",
+    "\n",
+    "def heroine_action():\n",
+    "    global hero              # refers to the global variable... yikes!\n",
+    "    hero = 'wonder woman'\n",
+    "    print(hero)\n",
+    "\n",
+    "def hero_action():\n",
+    "    heroine_action()         # nested function calls...\n",
+    "    hero = 'batman'          # this does not refer to the global variable, it is local\n",
+    "    print(hero)\n",
+    "    \n",
+    "# --------------------------------------\n",
+    "\n",
+    "\n",
+    "hero_action()         # note, this calls another function internally, first...\n",
+    "print(hero)           # this prints the global"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Slideshow",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.4.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
