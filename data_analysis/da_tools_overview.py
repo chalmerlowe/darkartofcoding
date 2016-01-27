@@ -1,3 +1,4 @@
+# <demo> silent
 # Title: Data Analysis Tools Overview (anaconda, ipython, numpy, and pandas)
 # Filename: da_tools_overview.py
 # Usage: da_tools_overview.py
@@ -20,17 +21,30 @@
 # numpy
 # pandas
 
-# and if we have time... we'll do solve a puzzle
+# and if we have time... we'll solve a puzzle from one of my 
+# favorite puzzle sites: 
+#     checkio.org
 
 
 # <demo> stop
-#
-print('hello')
-for item in [1, 2, 3, 4]:
-    print(item)
-    
-x = 'python'
-print(x[::-1])
+# Our demo scripts will be available on github at:
+#     https://github.com/chalmerlowe/darkartofcoding/tree/master/data_analysis
+
+#     https://goo.gl/MzSJoL
+
+
+# <demo> stop
+# Let's start with Anaconda
+# From Continuum Analytic's webpage:
+
+#     "Anaconda is a completely free Python distribution (including for commercial
+#      use and redistribution). It includes more than 300 of the most popular Python
+#      packages for science, math, engineering, and data analysis."
+
+# Anaconda solves some tricky problems:
+#     * resolves interdependencies between multiple libraries
+#     * installs as a single bundle or you can pick and choose libraries
+#     * takes a lot of the headache out of setting up a computing environment
 
 
 # <demo> stop
