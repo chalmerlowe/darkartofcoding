@@ -307,6 +307,8 @@ df
 
 # <demo> stop
 #
+# df.head()
+# df.head(3)
 # df.datetime
 # df.lat
 # df[df['lat'] > 49]
@@ -330,10 +332,14 @@ df.payload_size.apply(round, args=(-3,))
 
 # <demo> stop
 #
+# df.to<tab key>
 
 
 # <demo> stop
 #
+# df.name.str.<tab key>
+df['uid'] = df.name.str.replace(' ', '_')
+df.head(3):w
 
 
 # <demo> stop
